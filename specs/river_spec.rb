@@ -22,5 +22,15 @@ def test_river_has_fish()
   ], @river.fishes())
 end
 
+def test_fish_gets_eaten()
+  assert_equal(
+    [
+      "Jack",
+      "Berta",
+      "Christa"
+    ], @river.fish_eaten("Angel")
+  )
+end
+
 #class end
 end
