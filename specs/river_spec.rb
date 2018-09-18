@@ -6,7 +6,16 @@ require_relative("../river.rb")
 class RiverTest < MiniTest::Test
 
 def setup()
-  @river = River.new("Mississippi", ["Jack", "Berta", "Angel", "Christa"])
+
+
+    fish0 = Fish.new("Jack")
+    fish1 = Fish.new("Berta")
+    fish2 = Fish.new("Angel")
+    fish3 = Fish.new("Christa")
+
+    fishes = [fish0, fish1, fish2, fish3]
+
+  @river = River.new("Mississippi", fishes)
 end
 
 def test_river_has_name()
@@ -14,23 +23,14 @@ def test_river_has_name()
 end
 
 def test_river_has_fish()
-  assert_equal([
-    "Jack",
-    "Berta",
-    "Angel",
-    "Christa"
-  ], @river.fishes())
+  assert_equal(4, @river.fishes().count())
 end
 
 def test_fish_gets_eaten()
-  assert_equal(
-    [
-      "Jack",
-      "Berta",
-      "Christa"
-    ], @river.fish_eaten("Angel")
-  )
+  @river.fish_eaten("Angel")
+  assert_equal(3, @river.fishes().count())
 end
+
 
 #class end
 end

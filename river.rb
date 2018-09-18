@@ -8,10 +8,10 @@ def initialize(name, fishes)
   @fishes = fishes
 end
 
-def fish_eaten(fish_name)
-  for fish in @fishes
-    if fish == fish_name
-      @fishes.delete(fish_name)
+def fish_eaten(eat_fish)
+  for fish in fishes
+    if fish.name == eat_fish
+      fishes.delete(fish)
     end
   end
 end
