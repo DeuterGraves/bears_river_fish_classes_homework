@@ -7,15 +7,15 @@ class RiverTest < MiniTest::Test
 
 def setup()
 
+    fish0 = Fish.new("Jack")
+    fish1 = Fish.new("Berta")
+    fish2 = Fish.new("Angel")
+    fish3 = Fish.new("Christa")
 
-    @fish0 = Fish.new("Jack")
-    @fish1 = Fish.new("Berta")
-    @fish2 = Fish.new("Angel")
-    @fish3 = Fish.new("Christa")
+    fishes = [fish0, fish1, fish2, fish3]
 
-    @fishes = [@fish0, @fish1, @fish2, @fish3]
-
-  @river = River.new("Mississippi", @fishes)
+  @river = River.new("Mississippi", fishes)
+  
 end
 
 def test_river_has_name()
@@ -32,7 +32,7 @@ def test_fish_gets_eaten()
 end
 
 def test_find_fish_in_river()
-  assert_equal(@fish2, @river.find_fish("Angel"))
+  assert_equal(@river.fishes[2], @river.find_fish("Angel"))
 end
 
 #class end

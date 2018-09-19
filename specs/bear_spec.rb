@@ -7,16 +7,16 @@ require_relative("../bear.rb")
 class BearTest < MiniTest::Test
 
 def setup()
-  @fish0 = Fish.new("Jack")
-  @fish1 = Fish.new("Berta")
-  @fish2 = Fish.new("Angel")
-  @fish3 = Fish.new("Christa")
+  fish0 = Fish.new("Jack")
+  fish1 = Fish.new("Berta")
+  fish2 = Fish.new("Angel")
+  fish3 = Fish.new("Christa")
 
-  @fishes = [@fish0, @fish1, @fish2, @fish3]
+  fishes = [fish0, fish1, fish2, fish3]
 
-  @river = River.new("Mississippi", @fishes)
+  river = River.new("Mississippi", fishes)
 
-  @bear = Bear.new("Boris", "Asiatic Black Bear",[], "Mississippi")
+  @bear = Bear.new("Boris", "Asiatic Black Bear",[], river)
 
 end
 
