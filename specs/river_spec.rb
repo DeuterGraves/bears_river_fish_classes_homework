@@ -15,7 +15,7 @@ def setup()
     fishes = [fish0, fish1, fish2, fish3]
 
   @river = River.new("Mississippi", fishes)
-  
+
 end
 
 def test_river_has_name()
@@ -33,6 +33,10 @@ end
 
 def test_find_fish_in_river()
   assert_equal(@river.fishes[2], @river.find_fish("Angel"))
+end
+
+def test_fish_count()
+  assert_equal(4, @river.fish_count())
 end
 
 #class end

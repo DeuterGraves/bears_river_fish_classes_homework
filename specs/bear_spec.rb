@@ -16,12 +16,12 @@ def setup()
 
   river = River.new("Mississippi", fishes)
 
-  @bear = Bear.new("Boris", "Asiatic Black Bear",[], river)
+  @bear = Bear.new("Tony", "Asiatic Black Bear",[], river, "GRRRRRRRRReat")
 
 end
 
 def test_bear_can_haz_name()
-  assert_equal("Boris", @bear.name())
+  assert_equal("Tony", @bear.name())
 end
 
 def test_bear_can_haz_species()
@@ -35,12 +35,16 @@ end
 
 def test_bear_can_eat_fish()
   @bear.eats_fish("Angel", "Mississippi")
-  assert_equal(1, @bear.stomach().count())
+  assert_equal(1, @bear.stomach_count())
 end
 
+def test_bear_stomach_count()
+  assert_equal(0, @bear.stomach_count())
+end
 
-
-
+def test_bear_roar()
+  assert_equal("This is GRRRRRRRRReat!", @bear.roar_out())
+end
 
 
 
