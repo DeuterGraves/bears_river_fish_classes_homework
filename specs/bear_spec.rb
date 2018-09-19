@@ -14,9 +14,9 @@ def setup()
 
   fishes = [fish0, fish1, fish2, fish3]
 
-  river = River.new("Mississippi", fishes)
+  @river = River.new("Mississippi", fishes)
 
-  @bear = Bear.new("Tony", "Asiatic Black Bear",[], river, "GRRRRRRRRReat")
+  @bear = Bear.new("Tony", "Asiatic Black Bear",[], "GRRRRRRRRReat")
 
 end
 
@@ -34,7 +34,7 @@ end
 
 
 def test_bear_can_eat_fish()
-  @bear.eats_fish("Angel", "Mississippi")
+  p @bear.eats_fish("Angel", @river)
   assert_equal(1, @bear.stomach_count())
 end
 
